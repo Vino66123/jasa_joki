@@ -1,0 +1,39 @@
+/* Stats Cards */
+.card-counter {
+    padding: 20px 15px;
+    border-radius: 8px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.card-counter:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.card-counter.primary {
+    background: #007bff;
+}
+
+.card-counter.success {
+    background: #28a745;
+}
+
+.card-counter.info {
+    background: #17a2b8;
+}
+
+.card-counter.warning {
+    background: #ffc107;
+}
+
+.count-numbers {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+}
+
+.count-name {
+    font-size: 14px;
+    opacity: 0.9;
+}
