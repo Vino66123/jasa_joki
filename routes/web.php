@@ -1,16 +1,19 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CustomerController;
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ServiceController;
 use App\Http\Controllers\Customer\PortfolioController;
 use App\Http\Controllers\Customer\CustomerDashboardController;
-use App\Http\Controllers\Auth\AdminLoginController;
-use App\Http\Controllers\AdminOrdersController;
 use App\Http\Controllers\Customer\CustomerLoginController;
 use App\Http\Controllers\Customer\CustomerRegisterController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\AdminLoginController;
+use App\Http\Controllers\AdminOrdersController;
+
+use App\Http\Controllers\Admin\PaymentController;
+
 
 
 use Illuminate\Support\Facades\Route;
@@ -85,7 +88,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:admin'])->group(functi
     Route::resource('orders', AdminOrdersController::class);
     Route::resource('services', AdminServiceController::class);
     Route::get('/customers', [AdminCustomerController::class, 'index'])->name('customers.index');
-    Route::get('/payments', [AdminPaymentController::class, 'index'])->name('payments.index');
+    Route::get('/payments', [PaymentController::class, 'index'])->name('payments.index');
+    Route::put('/pembayaran/{id}', [PaymentController::class, 'update'])->name('payments.update');
 });
 
 
