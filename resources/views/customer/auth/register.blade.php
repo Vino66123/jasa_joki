@@ -40,12 +40,17 @@
                   <h4 class="mt-1 mb-5 pb-1">We are Jago Joki Team</h4>
                 </div>
 
-                <form method="POST" action="{{ route('admin.login.submit') }}">
+                <form method="POST" action="{{ route('customer.register.submit') }}">
                   @csrf
-                  <p>Please login to your account</p>
+                  <p>Register to your account</p>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input type="email" id="form2Example11" name="email" class="form-control" placeholder="Email address" value="{{ old('email') }}" required autofocus />
+                    <input type="name" id="form2Example11" name="name" class="form-control" placeholder="name" required autofocus />
+                    <label class="form-label" for="form2Example11">Name</label>
+                  </div>
+                  
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form2Example11" name="email" class="form-control" placeholder="Email address" required autofocus />
                     <label class="form-label" for="form2Example11">Email</label>
                   </div>
 
@@ -54,9 +59,15 @@
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
 
-                  <div class="text-center pt-1 mb-5 pb-1">
-                    <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Login</button>
+                  <div data-mdb-input-init class="form-outline mb-4">
+                   <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required />
+                    <label class="form-label" for="password_confirmation">Konfirmasi Password</label>
                   </div>
+
+                    <div class="text-center pt-1 mb-5 pb-1">
+                    <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Register</button>
+                </div>
+                 
                 </form>
 
               </div>

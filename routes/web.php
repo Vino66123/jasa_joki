@@ -9,6 +9,8 @@ use App\Http\Controllers\Customer\PortfolioController;
 use App\Http\Controllers\Customer\CustomerDashboardController;
 use App\Http\Controllers\Auth\AdminLoginController;
 use App\Http\Controllers\AdminOrdersController;
+use App\Http\Controllers\Customer\CustomerLoginController;
+use App\Http\Controllers\Customer\CustomerRegisterController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -42,14 +44,22 @@ use Illuminate\Support\Facades\Route;
 //     Route::get('/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard');
 //     // Tambahkan route customer lainnya di sini
 // });
+Route::get('/login', [CustomerLoginController::class, 'showLoginForm'])->name('customer.login');
+Route::post('/login', [CustomerLoginController::class, 'login'])->name('customer.login.submit');
+Route::post('/logout', [CustomerLoginController::class, 'logout'])->name('customer.logout');
+Route::get('/register', [CustomerRegisterController::class, 'showRegistrationForm'])->name('customer.register');
+Route::post('/register', [CustomerRegisterController::class, 'register'])->name('customer.register.submit');
+
 
 Route::name('customer.')->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portofolio.index');
-    Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimonial.index');
+    // Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimonial.index');
     Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
     Route::get('/layanan/{service}', [ServiceController::class, 'show'])->name('services.show');  
 });
+
+
 
 Route::prefix('customer')->name('customer.dashboard.')->middleware(['auth', 'customer'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -80,4 +90,4 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:admin'])->group(functi
 
 
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';

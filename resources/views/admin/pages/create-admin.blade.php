@@ -1,4 +1,4 @@
-@extends('admin.layouts.partials.admin')
+@extends('admin.layouts.partials.app')
 
 @section('content')
 <div class="container mt-4">

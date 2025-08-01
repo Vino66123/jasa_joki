@@ -24,7 +24,11 @@
 }
 
 </style>
-
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <section class="h-100 gradient-form" style="background-color: #eee;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -40,7 +44,7 @@
                   <h4 class="mt-1 mb-5 pb-1">We are Jago Joki Team</h4>
                 </div>
 
-                <form method="POST" action="{{ route('admin.login.submit') }}">
+                <form method="POST" action="{{ route('customer.login.submit') }}">
                   @csrf
                   <p>Please login to your account</p>
 
@@ -54,9 +58,17 @@
                     <label class="form-label" for="form2Example22">Password</label>
                   </div>
 
-                  <div class="text-center pt-1 mb-5 pb-1">
+                    <div class="text-center pt-1 mb-5 pb-1">
                     <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Login</button>
+                    <a class="text-muted" href="#!">Forgot password?</a>
                   </div>
+
+                  <div class="d-flex align-items-center justify-content-center pb-4">
+                    <p class="mb-0 me-2">Don't have an account?</p>
+                    <a href="{{ route('customer.register') }}" class="btn btn-outline-danger">Create new</a>
+                  </div>
+
+                 
                 </form>
 
               </div>

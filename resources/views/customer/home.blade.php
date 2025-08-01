@@ -1,6 +1,12 @@
-@extends('layouts.customer')
+@extends('customer.layouts.partials.app')
 
 @section('content')
+@if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show container mt-3" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+@endif
 <!-- Hero Section -->
 <section class="hero-section">
     <div class="container">
