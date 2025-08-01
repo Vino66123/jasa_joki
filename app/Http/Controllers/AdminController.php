@@ -30,7 +30,7 @@ class AdminController extends Controller
     // Tampilkan form tambah admin
     public function createAdmin()
     {
-        return view('admin.create-admin');
+        return view('admin.pages.create-admin');
     }
 
     // Proses simpan admin baru

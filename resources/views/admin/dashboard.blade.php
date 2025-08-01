@@ -1,5 +1,5 @@
-@extends('layouts.admin')
-
+@extends('admin.layouts.partials.app')
+@section('title', 'Dashboard Admin')
 @section('content')
 <div class="container-fluid">
     <h2 class="mb-4">Dashboard Admin</h2>

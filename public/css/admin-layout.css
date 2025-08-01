@@ -1,0 +1,78 @@
+body {
+            font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+            background: #f4f6fb;
+        }
+        .sidebar {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+            box-shadow: 2px 0 10px rgba(0,0,0,0.08);
+        }
+        .sidebar .nav-link {
+            color: rgba(255,255,255,.85);
+            font-size: 1.08rem;
+            padding: 14px 24px;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            border-radius: 0 30px 30px 0;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar .nav-link i {
+            font-size: 1.2rem;
+            min-width: 22px;
+            text-align: center;
+        }
+        .sidebar .nav-link:hover, .sidebar .nav-link.active {
+            color: #fff;
+            background: rgba(255,255,255,.15);
+            transform: translateX(6px) scale(1.03);
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .sidebar .nav-item.mt-3 {
+            margin-top: 2rem !important;
+        }
+        .sidebar .text-center {
+            background: #1a1d20 !important;
+            border-bottom: 1px solid #444;
+        }
+        .sidebar h4 {
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+        .main-content {
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+        .navbar {
+            background: linear-gradient(90deg, #fff 60%, #e3e6ed 100%) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            border-bottom: 1px solid #e3e6ed;
+        }
+        .navbar .ms-auto span {
+            font-weight: 600;
+            color: #343a40;
+            font-size: 1.08rem;
+        }
+        .navbar img {
+            border: 2px solid #6c63ff;
+            box-shadow: 0 2px 8px rgba(108,99,255,0.08);
+            margin-left: 6px;
+            transition: transform 0.2s;
+        }
+        .navbar img:hover {
+            transform: scale(1.08) rotate(-2deg);
+        }
+        .p-4 {
+            padding: 2.5rem !important;
+        }
+        @media (max-width: 991px) {
+            .sidebar {
+                min-height: auto;
+            }
+            .main-content {
+                min-height: auto;
+            }
+        }

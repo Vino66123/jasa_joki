@@ -8,6 +8,8 @@ use App\Http\Controllers\Customer\ServiceController;
 use App\Http\Controllers\Customer\PortfolioController;
 use App\Http\Controllers\Customer\CustomerDashboardController;
 use App\Http\Controllers\Auth\AdminLoginController;
+use App\Http\Controllers\AdminOrdersController;
+
 
 use Illuminate\Support\Facades\Route;
 
@@ -22,19 +24,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
 
 // Route::middleware(['auth', 'customer'])->group(function () {
 //     Route::get('/dashboard', [CustomerController::class, 'dashboard'])->name('customer.dashboard');
@@ -46,11 +48,11 @@ Route::name('customer.')->group(function () {
     Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portofolio.index');
     Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimonial.index');
     Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
-    Route::get('/layanan/{service}', [ServiceController::class, 'show'])->name('services.show');
-
-  
+    Route::get('/layanan/{service}', [ServiceController::class, 'show'])->name('services.show');  
 });
+
 Route::prefix('customer')->name('customer.dashboard.')->middleware(['auth', 'customer'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/dashboard', [CustomerDashboardController::class, 'index'])->name('index');
     Route::get('/orders', [CustomerDashboardController::class, 'orderHistory'])->name('order-history');
     Route::get('/orders/{id}', [CustomerDashboardController::class, 'showOrder'])->name('order-detail');
@@ -70,7 +72,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:admin'])->group(functi
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
     Route::get('/add-admin', [AdminController::class, 'createAdmin'])->name('create-admin');
     Route::post('/add-admin', [AdminController::class, 'storeAdmin'])->name('store-admin');
-    Route::resource('orders', AdminOrderController::class);
+    Route::resource('orders', AdminOrdersController::class);
     Route::resource('services', AdminServiceController::class);
     Route::get('/customers', [AdminCustomerController::class, 'index'])->name('customers.index');
     Route::get('/payments', [AdminPaymentController::class, 'index'])->name('payments.index');

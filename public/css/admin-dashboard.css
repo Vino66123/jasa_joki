@@ -1,0 +1,77 @@
+.card-counter {
+        box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+        margin: 10px 0;
+        padding: 24px 18px;
+        border-radius: 18px;
+        background: #fff;
+        transition: transform 0.15s, box-shadow 0.15s;
+        position: relative;
+        overflow: hidden;
+        min-height: 110px;
+    }
+    .card-counter.primary {
+        border-left: 6px solid #6c63ff;
+    }
+    .card-counter.success {
+        border-left: 6px solid #28a745;
+    }
+    .card-counter.info {
+        border-left: 6px solid #17a2b8;
+    }
+    .card-counter.warning {
+        border-left: 6px solid #ffc107;
+    }
+    .card-counter:hover {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 6px 24px rgba(44,62,80,0.13);
+    }
+    .count-numbers {
+        font-size: 2.1rem;
+        font-weight: 700;
+        color: #232526;
+        display: block;
+        margin-bottom: 2px;
+    }
+    .count-name {
+        font-size: 1.02rem;
+        color: #888;
+        font-weight: 500;
+    }
+    .card-counter i {
+        opacity: 0.18;
+        position: absolute;
+        right: 18px;
+        bottom: 14px;
+        font-size: 3.5rem;
+        pointer-events: none;
+    }
+    .table thead th {
+        background: #f4f6fb;
+        font-weight: 600;
+        border-bottom: 2px solid #e3e6ed;
+    }
+    .table-hover tbody tr:hover {
+        background: #f0f4ff;
+        transition: background 0.2s;
+    }
+    .badge.bg-success {
+        background: linear-gradient(90deg, #28a745 60%, #43e97b 100%);
+        color: #fff;
+    }
+    .badge.bg-warning {
+        background: linear-gradient(90deg, #ffc107 60%, #ffecb3 100%);
+        color: #856404;
+    }
+    .badge.bg-primary {
+        background: linear-gradient(90deg, #6c63ff 60%, #a084ee 100%);
+        color: #fff;
+    }
+    .btn-info {
+        background: #6c63ff;
+        border: none;
+        color: #fff;
+    }
+    .btn-info:hover {
+        background: #5548c8;
+        color: #fff;
+    }

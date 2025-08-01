@@ -1,0 +1,27 @@
+ .custom-table th {
+        background-color: #343a40;
+        color: white;
+    }
+
+    .custom-table td {
+        vertical-align: middle;
+    }
+
+    .badge {
+        padding: 0.5em 0.8em;
+        font-size: 0.85em;
+        border-radius: 0.25rem;
+    }
+
+    .badge.bg-success {
+        background-color: #28a745;
+    }
+
+    .badge.bg-warning {
+        background-color: #ffc107;
+        color: black;
+    }
+
+    .badge.bg-secondary {
+        background-color: #6c757d;
+    }
